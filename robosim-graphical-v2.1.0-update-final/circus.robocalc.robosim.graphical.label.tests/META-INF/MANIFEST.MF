@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: circus.robocalc.robosim.graphical.label.tests
+Bundle-ManifestVersion: 2
+Bundle-Name: circus.robocalc.robosim.graphical.label.tests
+Bundle-Vendor: RoboCalc Project
+Bundle-Version: 2.1.0.qualifier
+Bundle-SymbolicName: circus.robocalc.robosim.graphical.label.tests; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: circus.robocalc.robosim.graphical.label,
+ org.junit.jupiter.api;bundle-version="[5.0.0,6.0.0)",
+ org.eclipse.xtext.testing,
+ org.eclipse.xtext.xbase.testing,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: circus.robocalc.robosim.graphical.label.tests;x-internal=true

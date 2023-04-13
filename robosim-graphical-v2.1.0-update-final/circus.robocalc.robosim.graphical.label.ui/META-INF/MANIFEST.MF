@@ -1,0 +1,28 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: circus.robocalc.robosim.graphical.label.ui
+Bundle-ManifestVersion: 2
+Bundle-Name: Label Editor UI for RoboSim Graphical Editor
+Bundle-Vendor: RoboCalc Project
+Bundle-Version: 2.1.0.qualifier
+Bundle-SymbolicName: circus.robocalc.robosim.graphical.label.ui; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: circus.robocalc.robosim.graphical.label,
+ circus.robocalc.robosim.graphical.label.ide,
+ org.eclipse.xtext.ui,
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.ui.editors;bundle-version="3.5.0",
+ org.eclipse.ui.ide;bundle-version="3.5.0",
+ org.eclipse.ui,
+ org.eclipse.compare,
+ org.eclipse.xtext.builder,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtend.lib;bundle-version="2.14.0";resolution:=optional,
+ circus.robocalc.robosim.textual.ui;bundle-version="2.0.0",
+ circus.robocalc.robochart.textual.ui;bundle-version="2.0.0"
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: circus.robocalc.robosim.graphical.label.ui.internal,
+ circus.robocalc.robosim.graphical.label.ui.contentassist,
+ circus.robocalc.robosim.graphical.label.ui.quickfix
+Bundle-Activator: circus.robocalc.robosim.graphical.label.ui.internal.LabelActivator

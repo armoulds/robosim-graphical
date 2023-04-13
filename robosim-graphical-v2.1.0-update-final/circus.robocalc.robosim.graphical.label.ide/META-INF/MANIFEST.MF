@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: circus.robocalc.robosim.graphical.label.ide
+Bundle-ManifestVersion: 2
+Bundle-Name: Label Editor IDE for RoboSim Graphical Editor
+Bundle-Vendor: RoboCalc Project
+Bundle-Version: 2.1.0.qualifier
+Bundle-SymbolicName: circus.robocalc.robosim.graphical.label.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: circus.robocalc.robosim.graphical.label,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
+ circus.robocalc.robosim.textual.ide;bundle-version="2.0.0",
+ circus.robocalc.robosim.textual;bundle-version="2.0.0",
+ circus.robocalc.robochart.textual;bundle-version="2.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: circus.robocalc.robosim.graphical.label.ide.contentassist.antlr,
+ circus.robocalc.robosim.graphical.label.ide.contentassist.antlr.internal

@@ -1,0 +1,53 @@
+/********************************************************************************
+ * Copyright (c) 2019 University of York and others
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0.
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
+ * Contributors:
+ *   Alvaro Miyazawa - initial definition
+ *   Madiel Conserva Filho - initial definition
+ * 
+ ********************************************************************************/
+
+grammar circus.robocalc.robosim.graphical.label.RoboSimLabel with circus.robocalc.robosim.textual.RoboSim
+
+generate roboSimLabel "http://www.robocalc.circus/robosim/graphical/label/RoboSimLabel"
+
+import "http://www.robocalc.circus/RoboChart"
+import "http://www.robocalc.circus/RoboSim"
+
+LabelModel: 
+	(imports+=Import)*
+	label=Label?
+;
+
+Label:
+	(
+		{ExpressionInContext} 'expression' exp=Expression |
+		{StatementInContext} 'statement' stm=Statement |
+		{ActionInContext} 'action' action=Action |
+		{OperationInContext} 'signature' op=OperationSig |
+		{FunctionInContext} fun=Function |
+		{VariableInContext} vars=VariableList |
+		{FieldInContext} 'field' field=Field |
+		{LiteralInContext} 'literal' literal=Literal |
+		{EventInContext} ev=Event |
+		{SimTransitionInContext} 'transition' ( trigger=ExecTrigger )? (reset+=ClockReset)* ('[' cond=(Expression|Else) ']')? ('/' stm=Statement)? |
+		{SimMachineDefInContext}  'stm' name=ID ('[cycleDef' '=' exp=Expression ']') (inputContext=InputContext)? (outputContext=OutputContext)? |	
+		{StateMachineRefInContext} 'sref' name=ID '=' ref=[SimMachineDef|QualifiedName] |
+		{ControllerRefInContext} 'cref' name=ID '=' ref=[SimControllerDef|QualifiedName] |
+		{SimControllerDefInContext}  'controller' name=ID ('[cycleDef' '=' exp=Expression ']') |	
+		{SimModuleInContext}  'module' name=ID ('[cycleDef' '=' exp=Expression ']') |
+		// I have changed this case as there does not seem to be any different between SimRoboticPlatformDef and RoboticPlatformDef
+		{RoboticPlatformRefInContext} 'rref' name=ID '=' ref=[RoboticPlatformDef|QualifiedName] | 
+		{OperationRefInContext} 'opref' name=ID '=' ref=[OperationDef|QualifiedName] |
+		{ClockInContext} clock=Clock |
+		{RequiredInterfaceInContext}  'required' interface=[Interface] |
+		{ProvidedInterfaceInContext}  'provided' interface=[Interface] |
+		{UsedInterfaceInContext}  'used' interface=[Interface]				
+	) ('incontext' context=[NamedElement|QualifiedName])?
+;

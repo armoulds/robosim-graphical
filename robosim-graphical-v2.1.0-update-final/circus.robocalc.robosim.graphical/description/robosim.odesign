@@ -1,0 +1,1213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="robosim" version="12.0.0.2017041100">
+  <ownedViewpoints name="RoboSimID" label="RoboSim" modelFileExtension="rst" icon="/circus.robocalc.robosim.graphical/icons/robot.svg">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="SimulationID" label="Package" titleExpression="service:programName()" initialisation="true" showOnStartup="true" domainClass="robochart::RCPackage" preconditionExpression="service:isRoboSimModel()" enablePopupBars="true">
+      <metamodel href="http://www.robocalc.circus/RoboSim#/"/>
+      <metamodel href="http://www.robocalc.circus/RoboChart#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="PrimitiveTypeID" label="Primitive Type" deletionDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.5/@ownedTools[name='DeleteType']" labelDirectEdit="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.4/@ownedTools[name='DirectEditNamedElementID']" semanticCandidatesExpression="feature:types" synchronizationLock="true" domainClass="robochart::PrimitiveType">
+          <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelSize="10" showIcon="false" labelPosition="node" resizeKind="NSEW" width="10" height="5">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="BorderedEventID" label="BorderedEvent" deletionDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.5/@ownedTools[name='DeleteEvent']" labelDirectEdit="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.4/@ownedTools[name='DirectEditEventID']" semanticCandidatesExpression="service:allSimEvents()" synchronizationLock="true" domainClass="robochart.Event">
+          <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelSize="10" showIcon="false" labelExpression="service:printEvent()">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+          <conditionnalStyles predicateExpression="[self.broadcast/]">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="service:printEvent()" workspacePath="/circus.robocalc.robochart.graphical/icons/broadcast.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="[not self.broadcast/]">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="service:printEvent()" workspacePath="/circus.robocalc.robochart.graphical/icons/event.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+        </nodeMappings>
+        <nodeMappings name="ControllerRefID" label="Controller Reference" deletionDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.5/@ownedTools[name='DeleteControllerRef']" semanticCandidatesExpression="service:getControllerRefs()" doubleClickDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.6/@ownedTools[name='ControllerRefDoubleClickID']" synchronizationLock="true" domainClass="robochart::ControllerRef" reusedBorderedNodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@nodeMappings[name='BorderedEventID']">
+          <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="service:printControllerRef()" iconPath="/circus.robocalc.robochart.graphical/icons/ref_controller.png" labelPosition="node" resizeKind="NSEW" width="10" height="5">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>italic</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="RoboticPlatformRefID" label="Robotic Platform Reference" deletionDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.5/@ownedTools[name='DeleteRoboticPlatformRef']" semanticCandidatesExpression="service:getRoboticPlatformRefs()" doubleClickDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.6/@ownedTools[name='RoboticPlatfomrRefDoubleClickID']" synchronizationLock="true" domainClass="robochart.RoboticPlatformRef" reusedBorderedNodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@nodeMappings[name='BorderedEventID']">
+          <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="service:printRoboticPlatformRef()" iconPath="/circus.robocalc.robochart.graphical/icons/ref_robot.png" labelPosition="node" resizeKind="NSEW" width="10" height="5">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>italic</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="PackageID" label="Package" preconditionExpression="aql:(self.name != null)" deletionDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.5/@ownedTools[name='DeletePackageName']" semanticCandidatesExpression="var:self" synchronizationLock="true" domainClass="robochart.RCPackage">
+          <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelSize="10" showIcon="false" labelExpression="['package '+self.name/]" labelPosition="node" resizeKind="NSEW" width="20" height="4">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelFormat>underline</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="OperationRefID" label="Operation Reference" deletionDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.5/@ownedTools[name='DeleteOperationRef']" semanticCandidatesExpression="service:getOperationRefs()" synchronizationLock="true" domainClass="robochart.OperationRef" reusedBorderedNodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@nodeMappings[name='BorderedEventID']">
+          <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="service:printOperationRef()" iconPath="/circus.robocalc.robochart.graphical/icons/ref_operation.png" labelPosition="node" resizeKind="NSEW" width="10" height="5">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>italic</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="StateMachineRefID" label="State Machine Reference" deletionDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.5/@ownedTools[name='DeleteStateMachineRef']" semanticCandidatesExpression="service:getStateMachineRefs()" doubleClickDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.6/@ownedTools[name='MachineRefDoubleClickID']" synchronizationLock="true" domainClass="robochart::StateMachineRef" reusedBorderedNodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@nodeMappings[name='BorderedEventID']">
+          <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="service:printSimMachineRef()" iconPath="/circus.robocalc.robochart.graphical/icons/ref_stm.png" labelPosition="node" resizeKind="NSEW" width="10" height="5">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>italic</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="TransitionID" label="Transition" doubleClickDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.6/@ownedTools[name='EditTransition']" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID']/@subContainerMappings[name='StateID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID']/@subNodeMappings[name='InitialID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID']/@subNodeMappings[name='FinallID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID']/@subNodeMappings[name='JunctionID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID']/@subNodeMappings[name='ProbabilisticID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='SimMachineID1']" targetMapping="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID']/@subNodeMappings[name='FinallID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID']/@subNodeMappings[name='InitialID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID']/@subNodeMappings[name='JunctionID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID']/@subContainerMappings[name='StateID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID']/@subNodeMappings[name='ProbabilisticID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='SimMachineID1']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="robochart::Transition" useDomainElement="true" reconnections="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.7/@ownedTools[name='ReconnectSource'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.7/@ownedTools[name='ReconnectTarget']">
+          <style sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="10" showIcon="false" labelExpression="service:printSimTransition()">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ConnectionID" label="Connection" preconditionExpression="service:canConnect(sourceView, targetView)" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@nodeMappings[name='BorderedEventID']" targetMapping="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@nodeMappings[name='BorderedEventID']" targetFinderExpression="feature:eto" sourceFinderExpression="feature:efrom" domainClass="robochart::Connection" useDomainElement="true" reconnections="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.7/@ownedTools[name='ReconnectConnection']">
+          <style sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="10" showIcon="false" labelExpression="service:printConnection()">
+              <labelFormat>italic</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+          <conditionnalStyles predicateExpression="[(self.bidirec=false)/]">
+            <style sizeComputationExpression="2" routingStyle="manhattan">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              <centerLabelStyleDescription labelSize="10" showIcon="false" labelExpression="service:printConnection()">
+                <labelFormat>italic</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="[(self.bidirec=true)/]">
+            <style sourceArrow="InputArrow" sizeComputationExpression="2" routingStyle="manhattan">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              <centerLabelStyleDescription labelSize="10" showIcon="false" labelExpression="service:printConnection()">
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
+        </edgeMappings>
+        <containerMappings name="RecordTypeID" label="RecordType" deletionDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.5/@ownedTools[name='DeleteType']" labelDirectEdit="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.4/@ownedTools[name='DirectEditNamedElementID']" semanticCandidatesExpression="feature:types" synchronizationLock="true" domainClass="robochart::RecordType" childrenPresentation="List">
+          <subNodeMappings name="FieldID" label="Field" labelDirectEdit="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.4/@ownedTools[name='DirectEditFIeldID']" semanticCandidatesExpression="feature:fields" synchronizationLock="true" domainClass="robochart.Field">
+            <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" labelExpression="service:printField()" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" iconPath="/circus.robocalc.robochart.graphical/icons/datatype.png" widthComputationExpression="10">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="InterfaceID" label="Interface" deletionDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.5/@ownedTools[name='DeleteInterface']" labelDirectEdit="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.4/@ownedTools[name='DirectEditNamedElementID']" semanticCandidatesExpression="feature:interfaces" synchronizationLock="true" domainClass="robochart.Interface" childrenPresentation="List">
+          <subNodeMappings name="VariableID" label="Variable" deletionDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.5/@ownedTools[name='DeleteVariables']" semanticCandidatesExpression="feature:variableList" doubleClickDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.6/@ownedTools[name='EditVariable']" synchronizationLock="true" domainClass="robochart.VariableList">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="service:printVariable()" iconPath="/circus.robocalc.robochart.graphical/icons/variable.png" labelAlignment="LEFT" sizeComputationExpression="1" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+            <conditionnalStyles predicateExpression="[self.modifier = 'var'/]">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="service:printVariable()" iconPath="/circus.robocalc.robochart.graphical/icons/variable.png" labelAlignment="LEFT" sizeComputationExpression="1" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="service:isConstant()">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="service:printVariable()" iconPath="/circus.robocalc.robochart.graphical/icons/constant.png" labelAlignment="LEFT" sizeComputationExpression="1" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="[self.modifier = 'in'/]">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="service:printVariable()" iconPath="/circus.robocalc.robochart.graphical/icons/input.png" labelAlignment="LEFT" sizeComputationExpression="1" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="[self.modifier = 'out'/]">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="service:printVariable()" iconPath="/circus.robocalc.robochart.graphical/icons/output.png" labelAlignment="LEFT" sizeComputationExpression="1" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </conditionnalStyles>
+          </subNodeMappings>
+          <subNodeMappings name="OperationID" label="Operation" preconditionExpression="[self.oclIsTypeOf(OperationDef)._not()._and(self.oclIsKindOf(OperationRef)._not())/]" labelDirectEdit="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.4/@ownedTools[name='DirectEditOperationID']" semanticCandidatesExpression="feature:operations" synchronizationLock="true" domainClass="robochart.OperationSig">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="service:printOperation()" iconPath="/circus.robocalc.robochart.graphical/icons/operation.png" labelAlignment="LEFT" sizeComputationExpression="1" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="EventID" label="Event" deletionDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.5/@ownedTools[name='DeleteEvent']" labelDirectEdit="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.4/@ownedTools[name='DirectEditEventID']" semanticCandidatesExpression="feature:events" doubleClickDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.6/@ownedTools[name='EditEvent']" synchronizationLock="true" domainClass="robochart.Event">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="service:printEvent()" iconPath="/circus.robocalc.robochart.graphical/icons/flash.png" labelAlignment="LEFT" sizeComputationExpression="1" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="ClockID" label="Clock" semanticCandidatesExpression="service:allClocks()" synchronizationLock="true" domainClass="robochart.Clock">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="service:printClock()" iconPath="/circus.robocalc.robochart.graphical/icons/clock.png" labelAlignment="LEFT" sizeComputationExpression="1" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" showIcon="false">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="RoboticPlatformDefID" label="RoboticPlatformDef" deletionDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.5/@ownedTools[name='DeleteContext']" labelDirectEdit="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.4/@ownedTools[name='DirectEditNamedElementID']" semanticCandidatesExpression="service:getRoboticPlatformDefs()" synchronizationLock="true" domainClass="robochart.RoboticPlatformDef" reusedBorderedNodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@nodeMappings[name='BorderedEventID']" reusedNodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='InterfaceID']/@subNodeMappings[name='VariableID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='InterfaceID']/@subNodeMappings[name='OperationID']" childrenPresentation="List">
+          <subNodeMappings name="ProvidedID" label="Provided Interface" deletionDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.5/@ownedTools[name='DeleteProvidedInterface']" semanticCandidatesExpression="feature:pInterfaces" doubleClickDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.6/@ownedTools[name='InterfaceDoubleClickID']" synchronizationLock="true" domainClass="robochart.Interface">
+            <style xsi:type="style:SquareDescription" labelSize="10" iconPath="/circus.robocalc.robochart.graphical/icons/provided.png" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="RequiredID" label="Required Interface" deletionDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.5/@ownedTools[name='DeleteRequiredInterface']" semanticCandidatesExpression="feature:rInterfaces" doubleClickDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.6/@ownedTools[name='InterfaceDoubleClickID']" synchronizationLock="true" domainClass="robochart.Interface">
+            <style xsi:type="style:SquareDescription" labelSize="10" iconPath="/circus.robocalc.robochart.graphical/icons/required.png" labelAlignment="LEFT" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="UsedID" label="Defined Interface" deletionDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.5/@ownedTools[name='DeleteUsedInterface']" semanticCandidatesExpression="feature:interfaces" synchronizationLock="true" domainClass="robochart.Interface">
+            <style xsi:type="style:SquareDescription" labelSize="10" iconPath="/circus.robocalc.robochart.graphical/icons/used.png" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" iconPath="/circus.robocalc.robochart.graphical/icons/robot.png" widthComputationExpression="10">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="SimMachineID1" label="SimMachineDef" deletionDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.5/@ownedTools[name='DeleteContext']" labelDirectEdit="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.4/@ownedTools[name='DirectEditFunctionID']" semanticCandidatesExpression="service:getStateMachineDefs()" doubleClickDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.6/@ownedTools[name='EditSimMachineDef']" synchronizationLock="true" domainClass="robosim.SimMachineDef" reusedBorderedNodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@nodeMappings[name='BorderedEventID']" reusedContainerMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='ContextID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='SimMachineInputContext'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='SimMachineOutputContext'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID']" childrenPresentation="VerticalStack">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" labelSize="10" labelExpression="service:printSimMachine()" iconPath="/circus.robocalc.robochart.graphical/icons/relation-diagram.png" widthComputationExpression="30">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="MachinesID" label="Machines" semanticCandidatesExpression="var:self" synchronizationLock="true" domainClass="robochart.ControllerDef" reusedNodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@nodeMappings[name='OperationRefID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@nodeMappings[name='StateMachineRefID']" reusedContainerMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='SimMachineID1'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='SimOperationDefID']">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" showIcon="false" hideLabelByDefault="true" heightComputationExpression="10">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="ContextID" label="Context" preconditionExpression="service:contextHasElements()" semanticCandidatesExpression="var:self" synchronizationLock="true" domainClass="robochart.Context" reusedNodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='InterfaceID']/@subNodeMappings[name='OperationID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='RoboticPlatformDefID']/@subNodeMappings[name='ProvidedID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='RoboticPlatformDefID']/@subNodeMappings[name='RequiredID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='InterfaceID']/@subNodeMappings[name='VariableID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='InterfaceID']/@subNodeMappings[name='ClockID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='RoboticPlatformDefID']/@subNodeMappings[name='UsedID']" childrenPresentation="List">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="1" showIcon="false" labelExpression="" hideLabelByDefault="true" heightComputationExpression="*">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="NodesID" label="Nodes" semanticCandidatesExpression="var:self" synchronizationLock="true" domainClass="robochart.NodeContainer" dropDescriptions="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.7/@ownedTools[name='DropNode']">
+          <subNodeMappings name="InitialID" label="Initial" deletionDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.5/@ownedTools[name='DeleteNode']" semanticCandidatesExpression="feature:nodes" synchronizationLock="true" domainClass="robochart.Initial">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" hideLabelByDefault="true" sizeComputationExpression="-1" workspacePath="/circus.robocalc.robochart.graphical/icons/initial24.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="FinallID" label="Final" deletionDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.5/@ownedTools[name='DeleteNode']" semanticCandidatesExpression="feature:nodes" synchronizationLock="true" domainClass="robochart.Final">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" hideLabelByDefault="true" sizeComputationExpression="-1" workspacePath="/circus.robocalc.robochart.graphical/icons/final24.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="JunctionID" label="Junction" preconditionExpression="[not self.oclIsTypeOf(robochart::Initial)/]" deletionDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.5/@ownedTools[name='DeleteNode']" semanticCandidatesExpression="feature:nodes" synchronizationLock="true" domainClass="robochart.Junction">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" hideLabelByDefault="true" sizeComputationExpression="-1" workspacePath="/circus.robocalc.robochart.graphical/icons/junction24.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="ProbabilisticID" label="Probabilistic" deletionDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.5/@ownedTools[name='DeleteNode']" semanticCandidatesExpression="feature:nodes" synchronizationLock="true" domainClass="robochart.ProbabilisticJunction">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" hideLabelByDefault="true" sizeComputationExpression="-1" workspacePath="/circus.robocalc.robochart.graphical/icons/probabilistic24.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subContainerMappings name="StateID" label="State" preconditionExpression="[not self.oclIsTypeOf(robochart::Final)/]" deletionDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.5/@ownedTools[name='DeleteNode']" labelDirectEdit="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.4/@ownedTools[name='DirectEditNamedElementID']" semanticCandidatesExpression="feature:nodes" synchronizationLock="true" domainClass="robochart.State" reusedContainerMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='ActionsID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID']" childrenPresentation="VerticalStack">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" showIcon="false" widthComputationExpression="8" heightComputationExpression="5">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="1" showIcon="false" labelExpression="" hideLabelByDefault="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.2"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="ActionsID" label="Actions" semanticCandidatesExpression="var:self" synchronizationLock="true" domainClass="robochart.State" childrenPresentation="List">
+          <subNodeMappings name="ActionID" label="Action" semanticCandidatesExpression="feature:actions" doubleClickDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.6/@ownedTools[name='EditAction']" synchronizationLock="true" domainClass="robochart.Action">
+            <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" labelExpression="service:printSimAction()" labelAlignment="LEFT" sizeComputationExpression="1" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" showIcon="false" hideLabelByDefault="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="ImportsID" label="Imports" deletionDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.5/@ownedTools[name='DeleteImports']" semanticCandidatesExpression="var:self" synchronizationLock="true" domainClass="robochart.RCPackage" childrenPresentation="List">
+          <subNodeMappings name="ImportID" label="Import" semanticCandidatesExpression="feature:imports" synchronizationLock="true" domainClass="robochart.Import">
+            <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" labelExpression="feature:importedNamespace" labelAlignment="LEFT" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" showIcon="false" labelExpression="aql:'imports'" widthComputationExpression="20" heightComputationExpression="10">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="EnumerationID" label="Enumeration" deletionDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.5/@ownedTools[name='DeleteType']" labelDirectEdit="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.4/@ownedTools[name='DirectEditNamedElementID']" semanticCandidatesExpression="feature:types" synchronizationLock="true" domainClass="robochart.Enumeration" childrenPresentation="List">
+          <subNodeMappings name="LiteralID" label="Literal" deletionDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.5/@ownedTools[name='DeleteConstants']" labelDirectEdit="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.4/@ownedTools[name='DirectEditConstantID']" semanticCandidatesExpression="feature:literals" synchronizationLock="true" domainClass="robochart.Literal">
+            <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" iconPath="/circus.robocalc.robochart.graphical/icons/enumeration.png" widthComputationExpression="10">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="SimOperationDefID" label="SimOperationDef" deletionDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.5/@ownedTools[name='DeleteContext']" labelDirectEdit="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.4/@ownedTools[name='DirectEditOperationID']" semanticCandidatesExpression="service:getOperationDefs()" synchronizationLock="true" domainClass="robosim.SimOperationDef" reusedBorderedNodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@nodeMappings[name='BorderedEventID']" reusedContainerMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='ContextID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='SimMachineInputContext'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='SimMachineOutputContext'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID']" childrenPresentation="VerticalStack">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" labelSize="10" labelExpression="service:printOperationDefLabel()" iconPath="/circus.robocalc.robochart.graphical/icons/operation.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="FunctionID" label="Function" deletionDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.5/@ownedTools[name='DeleteFunction']" labelDirectEdit="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.4/@ownedTools[name='DirectEditFunctionID']" semanticCandidatesExpression="feature:functions" synchronizationLock="true" domainClass="robochart.Function" childrenPresentation="List">
+          <subNodeMappings name="Precondition" labelDirectEdit="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.4/@ownedTools[name='DirectEditConditionID']" semanticCandidatesExpression="feature:preconditions" synchronizationLock="true" domainClass="robochart.Expression">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="service:print()" iconPath="/circus.robocalc.robochart.graphical/icons/pre.png" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Postcondition" labelDirectEdit="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.4/@ownedTools[name='DirectEditConditionID']" semanticCandidatesExpression="feature:postconditions" synchronizationLock="true" domainClass="robochart.Expression">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="service:print()" iconPath="/circus.robocalc.robochart.graphical/icons/post.png" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="service:printFunction()" iconPath="/circus.robocalc.robochart.graphical/icons/function.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="SimControllerID" label="SimControllerDef" deletionDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.5/@ownedTools[name='DeleteContext']" labelDirectEdit="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.4/@ownedTools[name='DirectEditNamedElementID']" semanticCandidatesExpression="service:getControllerDefs()" doubleClickDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.6/@ownedTools[name='EditSimControllerDef']" synchronizationLock="true" domainClass="robosim.SimControllerDef" reusedBorderedNodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@nodeMappings[name='BorderedEventID']" reusedContainerMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='ContextID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='MachinesID']" childrenPresentation="VerticalStack">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="service:printSimController()" iconPath="/circus.robocalc.robochart.graphical/icons/network-diagram.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="SimModuleID" label="SimModule" deletionDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.5/@ownedTools[name='DeleteModule']" labelDirectEdit="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.4/@ownedTools[name='DirectEditNamedElementID']" semanticCandidatesExpression="feature:modules" doubleClickDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@toolSections.6/@ownedTools[name='EditSimModule']" synchronizationLock="true" domainClass="robosim.SimModule" childrenPresentation="HorizontalStack">
+          <subContainerMappings name="SimModuleNodes" semanticCandidatesExpression="var:self" domainClass="robosim.SimModule" reusedNodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@nodeMappings[name='RoboticPlatformRefID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@nodeMappings[name='ControllerRefID']" reusedContainerMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='SimControllerID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='RoboticPlatformDefID']">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" hideLabelByDefault="true">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="service:printSimModule()" iconPath="/circus.robocalc.robochart.graphical/icons/module.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="SimMachineInputContext" semanticCandidatesExpression="feature:inputContext" synchronizationLock="true" domainClass="robosim.InputContext" reusedNodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='RoboticPlatformDefID']/@subNodeMappings[name='UsedID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='RoboticPlatformDefID']/@subNodeMappings[name='RequiredID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='InterfaceID']/@subNodeMappings[name='EventID']" reusedContainerMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='ContextID']" childrenPresentation="List">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="15" arcHeight="15" borderSizeComputationExpression="1" labelSize="10" showIcon="false" labelExpression="Inputs" widthComputationExpression="30">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="SimMachineOutputContext" semanticCandidatesExpression="feature:outputContext" domainClass="robosim.OutputContext" reusedNodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='RoboticPlatformDefID']/@subNodeMappings[name='UsedID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='RoboticPlatformDefID']/@subNodeMappings[name='RequiredID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='InterfaceID']/@subNodeMappings[name='EventID']" reusedContainerMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='ContextID']" childrenPresentation="List">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="15" arcHeight="15" borderSizeComputationExpression="1" labelSize="10" showIcon="false" labelExpression="Outputs" widthComputationExpression="30">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="ArchitecturalConstructs" label="Architectural Constructs">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="InterfaceID" label="Interface" containerMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='InterfaceID']" iconPath="/circus.robocalc.robochart.graphical/icons/interface.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="robochart.Interface" referenceName="interfaces">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="['interface'+container.interfaces->size()/]"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="RobotID" label="Robotic Platform" forceRefresh="true" containerMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='RoboticPlatformDefID']" iconPath="/circus.robocalc.robochart.graphical/icons/robot.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.oclIsTypeOf(robosim::SimModule)">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="robochart::RoboticPlatformDef" referenceName="nodes">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:newRoboticPlatformDefName()"/>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.oclIsTypeOf(robochart::RCPackage)">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="robochart::RoboticPlatformDef" referenceName="robots">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:newRoboticPlatformDefName()"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="StateMachineID" label="StateMachine" forceRefresh="true" containerMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='SimMachineID1']" iconPath="/circus.robocalc.robochart.graphical/icons/relation-diagram.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="robosim.SimMachineDef" referenceName="machines">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:newSimMachineDefName()"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="cycleDef" valueExpression="service:newStateMachineDefCycle()"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="inputContext" valueExpression="service:newStateMachineInputContext()"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="outputContext" valueExpression="service:newStateMachineOutputContext()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="ControllerID" label="Controller" forceRefresh="true" containerMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='SimControllerID']" iconPath="/circus.robocalc.robochart.graphical/icons/network-diagram.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.oclIsTypeOf(robochart::RCPackage)">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="robosim.SimControllerDef" referenceName="controllers">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:newSimControllerDefName()"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="cycleDef" valueExpression="service:newDefCycle()"/>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.oclIsTypeOf(robosim::SimModule)">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="robosim.SimControllerDef" referenceName="nodes">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:newControllerDefName()"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="cycleDef" valueExpression="service:newDefCycle()"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="ConnectionID" label="Connection" edgeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@edgeMappings[name='ConnectionID']" iconPath="/circus.robocalc.robochart.graphical/icons/arrows.png">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:sourceView">
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="service:isControllerConnection(targetView)">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:getController()">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="robochart::Connection" referenceName="connections">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:createConnection(source,target,sourceView,targetView)"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="service:isModuleConnection(targetView)">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:getModule()">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="robochart::Connection" referenceName="connections">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:createConnection(source,target,sourceView,targetView)"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="ModuleID" label="Module" forceRefresh="true" containerMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='SimModuleID']" iconPath="/circus.robocalc.robochart.graphical/icons/module.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="robosim.SimModule" referenceName="modules">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:newSimModuleName()"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="cycleDef" valueExpression="service:newDefCycle()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="ControllerRefID" label="Controller Reference" nodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@nodeMappings[name='ControllerRefID']" iconPath="/circus.robocalc.robochart.graphical/icons/ref_controller.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:createControllerRef()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="StateMachineRefID" label="StateMachine Reference" nodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@nodeMappings[name='StateMachineRefID']" iconPath="/circus.robocalc.robochart.graphical/icons/ref_stm.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:createStateMachineRef()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="RoboticPlatformRefID" label="RoboticPlatform Reference" nodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@nodeMappings[name='RoboticPlatformRefID']" iconPath="/circus.robocalc.robochart.graphical/icons/ref_robot.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:createRoboticPlatformRef()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="SimOperationDefID" label="Operation Definition" forceRefresh="true" containerMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='SimOperationDefID']" iconPath="/circus.robocalc.robochart.graphical/icons/operation.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:createSimOperationDef()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="OperationRefID" label="Operation Reference" precondition="service:canAddOperationRef()" nodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@nodeMappings[name='OperationRefID']" iconPath="/circus.robocalc.robochart.graphical/icons/ref_operation.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:createOperationRef()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="FunctionID" label="Function" forceRefresh="true" containerMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='FunctionID']" iconPath="/circus.robocalc.robochart.graphical/icons/function.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:createFunction()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="StateMachine" label="State Machine">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="StateID" label="State" forceRefresh="true" containerMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID']/@subContainerMappings[name='StateID']" iconPath="/circus.robocalc.robochart.graphical/icons/relation-diagram.png" extraMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID']/@subContainerMappings[name='StateID']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="robochart.State" referenceName="nodes">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:newStateName()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="JunctionID" label="Junction" nodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID']/@subNodeMappings[name='JunctionID']" iconPath="/circus.robocalc.robochart.graphical/icons/junction16.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="robochart.Junction" referenceName="nodes">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:newJunctionName()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="FinalD" label="Final" nodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID']/@subNodeMappings[name='FinallID']" iconPath="/circus.robocalc.robochart.graphical/icons/final16.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="robochart.Final" referenceName="nodes">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:newFinalName()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="InitialID" label="Initial" nodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID']/@subNodeMappings[name='InitialID']" iconPath="/circus.robocalc.robochart.graphical/icons/initial16.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="robochart.Initial" referenceName="nodes">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:newInitialName()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="TransitionID" label="Transition" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@edgeMappings[name='TransitionID']" iconPath="/circus.robocalc.robochart.graphical/icons/arrows.png" extraSourceMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID']" extraTargetMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[source.eContainer()/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="robochart::Transition" referenceName="transitions">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:newSimTransitionName()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="ProbabilisticJunctionID" label="Probabilistic Junction" nodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID']/@subNodeMappings[name='ProbabilisticID']" iconPath="/circus.robocalc.robochart.graphical/icons/probabilistic.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="robochart.ProbabilisticJunction" referenceName="nodes">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:newProbabilisticJunctionName()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="OtherToolsID" label="Data Model" icon="/circus.robocalc.robochart.graphical/icons/robot.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="CreateVariableID" label="Variable" nodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='InterfaceID']/@subNodeMappings[name='VariableID']" iconPath="/circus.robocalc.robochart.graphical/icons/variable.png" extraMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='InterfaceID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='MachinesID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='SimMachineID1']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:createSimVariable()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="CreateConstantVarID" label="Constant Variable" nodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='InterfaceID']/@subNodeMappings[name='VariableID']" iconPath="/circus.robocalc.robochart.graphical/icons/constant.png" extraMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='SimMachineID1'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='MachinesID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='InterfaceID']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:createConstantVar()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="CreateOperationID" label="Operation" precondition="service:canAddOperation()" nodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='InterfaceID']/@subNodeMappings[name='OperationID']" iconPath="/circus.robocalc.robochart.graphical/icons/operation.png" extraMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='InterfaceID']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:createOperation()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="CreateEventID" label="Event" nodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='InterfaceID']/@subNodeMappings[name='EventID']" iconPath="/circus.robocalc.robochart.graphical/icons/flash.png" extraMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='SimMachineID1'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='ContextID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='InterfaceID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='MachinesID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='RoboticPlatformDefID']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:createEvent()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="CreateClockID" label="Clock" nodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='InterfaceID']/@subNodeMappings[name='ClockID']" iconPath="/circus.robocalc.robochart.graphical/icons/clock.png" extraMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='SimMachineID1'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='SimOperationDefID']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:createClock()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="CreateActionID" label="Action" nodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='ActionsID']/@subNodeMappings[name='ActionID']" iconPath="/circus.robocalc.robochart.graphical/icons/action.png" extraMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID']/@subContainerMappings[name='StateID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='ActionsID']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:createSimAction()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="CreateRequiredInterfaceID" label="Required Interface" precondition="service:canAddRequiredInterface()" nodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='RoboticPlatformDefID']/@subNodeMappings[name='RequiredID']" iconPath="/circus.robocalc.robochart.graphical/icons/required.png" extraMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='SimMachineID1'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='RoboticPlatformDefID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='RoboticPlatformDefID']/@subNodeMappings[name='ProvidedID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='RoboticPlatformDefID']/@subNodeMappings[name='RequiredID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='ContextID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='MachinesID']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:createRequiredInterface()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="CreateProvidednterfaceID" label="Provided Interface" precondition="service:canAddProvidedInterface()" nodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='RoboticPlatformDefID']/@subNodeMappings[name='ProvidedID']" iconPath="/circus.robocalc.robochart.graphical/icons/provided.png" extraMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='SimMachineID1'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='RoboticPlatformDefID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='RoboticPlatformDefID']/@subNodeMappings[name='ProvidedID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='RoboticPlatformDefID']/@subNodeMappings[name='RequiredID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='ContextID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='MachinesID']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:createProvidedInterface()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="CreateUsedInterfaceID" label="Defined Interface" nodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='RoboticPlatformDefID']/@subNodeMappings[name='UsedID']" iconPath="/circus.robocalc.robochart.graphical/icons/used.png" extraMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='SimMachineID1'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='RoboticPlatformDefID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='RoboticPlatformDefID']/@subNodeMappings[name='ProvidedID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='RoboticPlatformDefID']/@subNodeMappings[name='RequiredID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='ContextID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='MachinesID']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:createUsedInterface()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="CreateImportID" label="Import" nodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='ImportsID']/@subNodeMappings[name='ImportID']" iconPath="/circus.robocalc.robochart.graphical/icons/import.png" extraMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='ImportsID']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:createImport()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="CreatePreconditionID" label="Precondition" precondition="service:canHavePrePostCondition()" nodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='FunctionID']/@subNodeMappings[name='Precondition']" iconPath="/circus.robocalc.robochart.graphical/icons/pre.png" extraMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='FunctionID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='SimOperationDefID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:createPrecondition()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="CreatePostconditionID" label="Postcondition" precondition="service:canHavePrePostCondition()" nodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='FunctionID']/@subNodeMappings[name='Postcondition']" iconPath="/circus.robocalc.robochart.graphical/icons/post.png" extraMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='FunctionID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='SimOperationDefID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:createPostcondition()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="TypeToolsID" label="Types" icon="/circus.robocalc.robochart.graphical/icons/tools.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="CreatePrimitiveTypeID" label="Primitive" nodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@nodeMappings[name='PrimitiveTypeID']" iconPath="/circus.robocalc.robochart.graphical/icons/type.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="robochart.PrimitiveType" referenceName="types">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="['type'+container.types->size()/]"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="CreateRecordTypeID" label="RecordType" containerMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='RecordTypeID']" iconPath="/circus.robocalc.robochart.graphical/icons/datatype.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="robochart::RecordType" referenceName="types">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="['type'+container.types->size()/]"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="CreateFieldID" label="Field" nodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='RecordTypeID']/@subNodeMappings[name='FieldID']" iconPath="/circus.robocalc.robochart.graphical/icons/field.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:createField()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="CreateEnumerationID" label="Enumeration" containerMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='EnumerationID']" iconPath="/circus.robocalc.robochart.graphical/icons/enumeration.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="robochart.Enumeration" referenceName="types">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="['type'+container.types->size()/]"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="CreateLiteralID" label="Literal" nodeMappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='EnumerationID']/@subNodeMappings[name='LiteralID']" iconPath="/circus.robocalc.robochart.graphical/icons/item.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:createLiteral()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="DirectEditTools">
+          <ownedTools xsi:type="tool:DirectEditLabel" name="DirectEditEventID" label="Direct Edit Event">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:replaceEvent(arg0)"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="DirectEditOperationID" label="Direct Edit Operation">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:replaceOperation(arg0)"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="DirectEditFIeldID" label="Direct Edit Field">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:replaceField(arg0)"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="DirectEditNamedElementID" label="Direct Edit Named Element">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="DirectEditConstantID" label="Direct Edit Constant">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:replaceConstant(arg0)"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="DirectEditConditionID" label="Direct Edit Condition">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:replaceCondition(arg0)"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="DirectEditFunctionID" label="Direct Edit Function">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:replaceFunction(arg0)"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="DeletionTools">
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="DeleteRequiredInterface">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:deleteRequiredInterface(containerView)"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="DeleteProvidedInterface">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:deleteProvidedInterface(containerView)"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="DeletePackageName">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:Unset" featureName="name"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="DeleteInterface">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:alternativeDeleteInterface()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="DeleteEvent">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:deleteEvent()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="DeleteUsedInterface">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:deleteUsedInterface(containerView)"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="DeleteOperation">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:deleteOperation()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="DeleteFunction">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:deleteFunction()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="DeleteStateMachineRef">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:deleteReferences()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="DeleteControllerRef">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:deleteReferences()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="DeleteRoboticPlatformRef">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:deleteReferences()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="DeleteContext">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:deleteContext()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="DeleteNode">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:deleteNode()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="DeleteImports" precondition="[false/]">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:deleteImports(elementView)"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="DeleteType">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:deleteType()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="DeleteConstants">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:deleteConstant()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="DeleteVariables">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:deleteVariable()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="DeleteModule">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:deleteModule()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="DeleteOperationRef">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:deleteReferences()"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="DoubleClick">
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="MachineRefDoubleClickID" label="Double Click Machine Ref" mappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@nodeMappings[name='StateMachineRefID']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[element.oclAsType(StateMachineRef).ref.eContainer(robochart::RCPackage)/]">
+                <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="ControllerRefDoubleClickID" label="Double Click Controller Ref" mappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@nodeMappings[name='ControllerRefID']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:getRCPackage()">
+                  <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="RoboticPlatfomrRefDoubleClickID" label="Double Click Robotic Platform Ref" mappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@nodeMappings[name='RoboticPlatformRefID']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[element.oclAsType(RoboticPlatformRef).ref.eContainer(RCPackage)/]">
+                <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="InterfaceDoubleClickID" label="Double Click Interface" mappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='RoboticPlatformDefID']/@subNodeMappings[name='ProvidedID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='RoboticPlatformDefID']/@subNodeMappings[name='RequiredID']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:getRCPackage()">
+                  <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="EditAction" mappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='ActionsID']/@subNodeMappings[name='ActionID']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:editSimAction()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="EditTransition" mappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@edgeMappings[name='TransitionID']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:editSimTransition()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="EditVariable" mappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='InterfaceID']/@subNodeMappings[name='VariableID']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:Switch">
+                  <cases conditionExpression="[element.modifier = 'var'/]">
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:editVariableList()"/>
+                  </cases>
+                  <default>
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:editConstantList()"/>
+                  </default>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="EditSimMachineDef" label="EditSimMachineDef" mappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='SimMachineID1']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:editSimMachineDef()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="EditSimControllerDef" label="EditSimControllerDef" mappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='SimControllerID']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:editSimControllerDef()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="EditSimModule" label="EditSimModule" mappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='SimModuleID']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:editSimModule()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="EditEvent" mappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='InterfaceID']/@subNodeMappings[name='EventID']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:replaceEvent()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="OtherTools">
+          <ownedTools xsi:type="tool_1:ToolDescription" name="SetPackageID" label="Set Package" precondition="aql:container.oclIsTypeOf(robochart::RCPackage)" iconPath="/circus.robocalc.robochart.graphical/icons/package.png">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:readPackageName()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:PopupMenu" name="RoboChartMenu" label="RoboChart">
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="ToggleMult" label="Toggle bidirectionality" precondition="service:isConnection()" forceRefresh="true">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:toggleMult()"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="ToggleAsync" label="Toggle asynchronicity" precondition="service:canBeAsync()" forceRefresh="true">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:toggleAsync()"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="RenameVariables" label="Rename Variables" precondition="service:isVariableList()" forceRefresh="true">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:refactorVariables()"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="ToggleConst" label="Toggle variable/constant" precondition="service:isVariableList()" forceRefresh="true">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:toggleConst()"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="ConvertOp2Stm" label="Operation -> State Machine" precondition="service:canConvertOperation2Stm()" forceRefresh="true">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:convertOperation2Stm()"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="ToggleTermination" label="Toggle termination" precondition="service:isOperationDef()" forceRefresh="true">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:toggleTermination()"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="ToggleBroadcast" label="Toggle broadcast" precondition="service:canBeBroadcast()" forceRefresh="true">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:toggleNature()"/>
+              </initialOperation>
+            </menuItemDescription>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="ReconnectConnection" reconnectionKind="RECONNECT_BOTH">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:reconnectEdge(source, sourceView, target, targetView)"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="ReconnectTarget" precondition="service:canReconnectTransitionTarget(source, target)">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:reconnectTransitionFromTarget(source, target)"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="ReconnectSource" precondition="service:canReconnectTransitionSource(source, target)" reconnectionKind="RECONNECT_SOURCE">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:reconnectTransitionFromSource(source, target)"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerDropDescription" name="DropNode" mappings="//@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID']/@subNodeMappings[name='FinallID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID']/@subNodeMappings[name='InitialID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID']/@subNodeMappings[name='JunctionID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID']/@subNodeMappings[name='ProbabilisticID'] //@ownedViewpoints[name='RoboSimID']/@ownedRepresentations[name='SimulationID']/@defaultLayer/@containerMappings[name='NodesID']/@subContainerMappings[name='StateID']">
+            <oldContainer name="oldSemanticContainer"/>
+            <newContainer name="newSemanticContainer"/>
+            <element name="element"/>
+            <newViewContainer name="newContainerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="service:canDrop(oldSemanticContainer, newSemanticContainer)">
+                  <subModelOperations xsi:type="tool_1:MoveElement" newContainerExpression="var:newSemanticContainer" featureName="nodes"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="circus.robocalc.robosim.graphical.services.RoboSimServices"/>
+  </ownedViewpoints>
+</description:Group>

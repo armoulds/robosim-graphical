@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: RoboSim Graphical Editor Services
+Bundle-SymbolicName: circus.robocalc.robosim.graphical.services;singleton:=true
+Bundle-Version: 2.1.0.qualifier
+Bundle-Activator: circus.robocalc.robosim.graphical.services.Activator
+Bundle-Vendor: RoboCalc Project
+Require-Bundle: org.eclipse.core.runtime,
+ circus.robocalc.robochart;bundle-version="2.0.0",
+ org.eclipse.xtext,
+ org.eclipse.jface;bundle-version="3.15.100",
+ org.eclipse.ui;bundle-version="3.112.0",
+ circus.robocalc.robochart.textual;bundle-version="2.0.0",
+ org.eclipse.xtext.ui.shared,
+ org.apache.log4j;bundle-version="1.2.15",
+ org.eclipse.sirius.diagram;bundle-version="6.2.0",
+ circus.robocalc.robosim;bundle-version="2.0.0",
+ circus.robocalc.robosim.graphical.label;bundle-version="2.0.0",
+ circus.robocalc.robochart.graphical.label;bundle-version="2.0.0",
+ circus.robocalc.robosim.textual;bundle-version="2.0.0",
+ circus.robocalc.robochart.graphical.services;bundle-version="2.0.0",
+ org.eclipse.xtext.xbase;bundle-version="2.19.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Automatic-Module-Name: circus.robocalc.robosim.graphical.services
+Bundle-ActivationPolicy: lazy
+Export-Package: circus.robocalc.robosim.graphical.services
